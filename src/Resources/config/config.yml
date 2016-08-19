@@ -77,7 +77,6 @@ parameters:
                 - garde-corps/garde-corps-2.jpg
                 - garde-corps/garde-corps-3.jpg
                 - garde-corps/garde-corps-4.jpg
-                - garde-corps/garde-corps-5.jpg
         isolation:
             title: Isolation
             pictures:
@@ -112,5 +111,4 @@ parameters:
                 - pont/passage.jpg
                 - pont/pont.jpg
                 - croix/croix-1.jpg
-                - croix/croix-2.jpg
 
