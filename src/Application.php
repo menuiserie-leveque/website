@@ -18,7 +18,7 @@ class Application extends BaseApplication
 
         // A closure:
         $this->get('/', function () {
-            return ['categories' => []];
+            return [];
         })->template('index.html.twig');
     }
 }

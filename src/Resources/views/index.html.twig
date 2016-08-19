@@ -47,14 +47,14 @@
 <div class="container pt" id="nos-realisations">
     <h2>Nos réalisations</h2>
 
-    {% for category in categories %}
+    {% for category in parameters.realisations %}
         <div class="row">
             <h3>{{ category.title }}</h3>
 
             {% for picture in category.pictures %}
                 <div class="col-xs-6 col-md-3">
                     <div class="thumbnail">
-                        <img src="{{ picture.url }}" alt="{{ picture.title }}">
+                        <img src="{{ picture }}" alt="">
                     </div>
                 </div>
             {% endfor %}
