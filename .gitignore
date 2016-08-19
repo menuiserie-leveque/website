@@ -1,6 +1,0 @@
-/vendor/
-/bin/
-node_modules/
-dist/
-!src/Resources/public/.gitkeep
-src/Resources/public/
