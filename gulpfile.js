@@ -5,6 +5,9 @@ var gulp       = require('gulp'),
     concat     = require('gulp-concat'),
     uglify     = require('gulp-uglify'),
     prefixer   = require('gulp-autoprefixer'),
+    ghPages    = require('gulp-gh-pages'),
+    imagemin   = require('gulp-imagemin'),
+    resize     = require('gulp-image-resize'),
     onError    = function (error) { console.log(error.toString()); this.emit('end'); };
 
 gulp.task('css', function() {
@@ -36,6 +39,14 @@ gulp.task('fonts', function() {
 gulp.task('realisation', function () {
     return gulp.src('./src/Resources/assets/images/**/*')
         .pipe(plumber({ errorHandler: onError }))
+        .pipe(resize({
+            imageMagick: true,
+            width : 253,
+            height : 189,
+            crop : false,
+            upscale : false
+        }))
+        .pipe(imagemin())
         .pipe(gulp.dest('./src/Resources/public/images'))
 });
 
@@ -44,3 +55,8 @@ gulp.task('watch', ['css'], function () {
 });
 
 gulp.task('default', ['css', 'fonts', 'js', 'realisation']);
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+        .pipe(ghPages());
+});
