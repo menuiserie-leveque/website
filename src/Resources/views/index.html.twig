@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Menuiserie Lévêque</title>
 
-    <script src="menuiserie.js"></script>
+    <link href="css/main.css" rel="stylesheet", type="text/css" />
 </head>
 <body>
 <!-- Static navbar -->
@@ -54,7 +54,7 @@
             {% for picture in category.pictures %}
                 <div class="col-xs-6 col-md-3">
                     <div class="thumbnail">
-                        <img src="{{ picture }}" alt="">
+                        <img src="images/realisations/{{ picture }}" alt="">
                     </div>
                 </div>
             {% endfor %}

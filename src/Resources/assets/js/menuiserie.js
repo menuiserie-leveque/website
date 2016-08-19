@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/main.css";
+import "../sass/main.css";
 import $ from "jquery";
 import "jquery-smooth-scroll";
 

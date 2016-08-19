@@ -7,5 +7,5 @@ install:
 
 # Build the project
 build:
-	node_modules/.bin/webpack
+	node_modules/.bin/gulp
 	bin/console phpillip:build menuiserie-leveque.fr
