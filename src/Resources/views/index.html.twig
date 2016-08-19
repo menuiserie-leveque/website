@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Menuiserie Lévêque</title>
 
-    <link href="css/main.css" rel="stylesheet", type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- Static navbar -->
@@ -54,7 +54,7 @@
             {% for picture in category.pictures %}
                 <div class="col-xs-6 col-md-3">
                     <div class="thumbnail">
-                        <img src="images/realisations/{{ picture }}" alt="">
+                        <img class="lazy" data-original="images/realisations/{{ picture }}" alt="" />
                     </div>
                 </div>
             {% endfor %}
@@ -100,7 +100,15 @@
 <div id="map"></div>
 
 {% block javascripts %}
+    <script src="js/menuiserie.js"></script>
     <script>
+        $(document).ready(function () {
+            $('a').smoothScroll();
+            $('img.lazy').lazyload({
+                threshold : 200
+            });
+        });
+
         function initMap() {
             var mapDiv = document.getElementById('map');
             var mapCenter = new google.maps.LatLng(44.915000, 4.442022);
